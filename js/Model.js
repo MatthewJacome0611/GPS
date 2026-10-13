@@ -5,9 +5,7 @@ export class Model {
         this.devicesRef = ref(db, 'devices');
     }
 
-    /**
-     * Envía la ubicación actual a Firebase bajo el ID del usuario específico
-     */
+    // Usado por el Emisor para actualizar su posición
     async actualizarUbicacionFirebase(userId, lat, lng) {
         try {
             const userDeviceRef = ref(db, `devices/${userId}`);
@@ -22,13 +20,10 @@ export class Model {
         }
     }
 
-    /**
-     * Escucha en tiempo real a TODOS los dispositivos conectados en Firebase
-     */
+    // Usado por el Monitor/Jefe para escuchar a toda la flota
     suscribirseATodosLosDispositivos(callback) {
         onValue(this.devicesRef, (snapshot) => {
             const data = snapshot.val();
-            // data será un objeto con todos los usuarios: { "Juan": {lat, lng...}, "Maria": {lat, lng...} }
             callback(data || {});
         });
     }

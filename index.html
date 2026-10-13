@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPS Tracker Multiusuario - MVC & Firebase</title>
-    <link rel="stylesheet" href="style.css?v=50f4ee7">
-    <!-- Google Maps API integrada -->
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1F7qv8ZCjabTPswJDBgKyqXzxllE1k5s"></script>
+    <title>Emisor GPS - Transmisión en Vivo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Tracker GPS Multiusuario en Tiempo Real</h1>
+        <h1>Transmisor GPS (Conductor)</h1>
         <div id="status-bar">Estado: <span id="status-text">Desconectado</span></div>
     </header>
 
-    <main class="container">
-        <!-- Panel de Control (Vista) -->
-        <section class="control-panel">
+    <main class="container-center">
+        <section class="control-card">
+            <h2>Configurar Transmisión</h2>
+
             <div class="user-input-group">
-                <label for="txt-username"><strong>Tu Nombre / Usuario:</strong></label>
-                <input type="text" id="txt-username" placeholder="Ej. Juan, Auto_1, RepartidorA" value="Usuario_Demo">
+                <label for="txt-username"><strong>Nombre / ID del Dispositivo:</strong></label>
+                <input type="text" id="txt-username" placeholder="Ej. Conductor_Juan, Auto_01" value="Conductor_1">
             </div>
 
             <button id="btn-start" class="btn btn-primary">Iniciar Transmisión GPS</button>
@@ -31,12 +30,9 @@
                 <p><strong>Última actualización:</strong> <span id="lbl-time">-</span></p>
             </div>
         </section>
-
-        <!-- Contenedor del Mapa -->
-        <section id="map"></section>
     </main>
 
-    <!-- Script Controlador principal con Módulos ES6 -->
-    <script type="module" src="js/Controller.js"></script>
+    <!-- Script del Emisor -->
+    <script type="module" src="js/tracker-controller.js"></script>
 </body>
 </html>

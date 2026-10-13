@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Monitoreo GPS (Jefe)</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Maps API integrada -->
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1F7qv8ZCjabTPswJDBgKyqXzxllE1k5s"></script>
+</head>
+<body>
+    <header>
+        <h1>Panel de Control y Monitoreo de Flota</h1>
+        <div id="status-bar">Estado: <span id="status-text" style="color: #34a853;">Monitoreando Red</span></div>
+    </header>
+
+    <main class="container">
+        <!-- Panel lateral informativo de la flota -->
+        <section class="control-panel">
+            <h3>Dispositivos en Vivo</h3>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px;">Aquí se muestran todas las rutas activas de los usuarios conectados.</p>
+            <div id="fleet-list" style="display: flex; flex-direction: column; gap: 8px;">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </section>
+
+        <!-- Contenedor del Mapa General -->
+        <section id="map"></section>
+    </main>
+
+    <!-- Script del Monitor/Jefe -->
+    <script type="module" src="js/monitor-controller.js"></script>
+</body>
+</html>

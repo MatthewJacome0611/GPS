@@ -8,6 +8,7 @@ El sitio se sirve desde la raíz de la rama `main` en GitHub Pages. La geolocali
 
 ## Configuración y privacidad
 
+- Google Maps JavaScript API requiere que la facturación esté habilitada en el proyecto de Google Cloud asociado a la clave.
 - Restringe la clave de Google Maps a los dominios donde publiques el sitio y limita las APIs habilitadas.
 - Configura las reglas de Firebase Realtime Database para autorizar únicamente a usuarios que deban leer y escribir ubicaciones. La aplicación no implementa autenticación.
 - Las claves y la configuración incluidas en una aplicación web son visibles para cualquier visitante; no las uses como mecanismo de autorización.

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS Tracker Multiusuario - MVC & Firebase</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Maps API integrada -->
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1F7qv8ZCjabTPswJDBgKyqXzxllE1k5s"></script>
+</head>
+<body>
+    <header>
+        <h1>Tracker GPS Multiusuario en Tiempo Real</h1>
+        <div id="status-bar">Estado: <span id="status-text">Desconectado</span></div>
+    </header>
+
+    <main class="container">
+        <!-- Panel de Control (Vista) -->
+        <section class="control-panel">
+            <div class="user-input-group">
+                <label for="txt-username"><strong>Tu Nombre / Usuario:</strong></label>
+                <input type="text" id="txt-username" placeholder="Ej. Juan, Auto_1, RepartidorA" value="Usuario_Demo">
+            </div>
+
+            <button id="btn-start" class="btn btn-primary">Iniciar Transmisión GPS</button>
+            <button id="btn-stop" class="btn btn-danger" disabled>Detener Transmisión</button>
+            
+            <div class="coords-info">
+                <p><strong>Latitud:</strong> <span id="lbl-lat">0.000000</span></p>
+                <p><strong>Longitud:</strong> <span id="lbl-lng">0.000000</span></p>
+                <p><strong>Última actualización:</strong> <span id="lbl-time">-</span></p>
+            </div>
+        </section>
+
+        <!-- Contenedor del Mapa -->
+        <section id="map"></section>
+    </main>
+
+    <!-- Script Controlador principal con Módulos ES6 -->
+    <script type="module" src="js/Controller.js"></script>
+</body>
+</html>
